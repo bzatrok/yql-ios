@@ -16,7 +16,7 @@ You will get a `NSDictionary` object containing the results. The structure of th
 
 ## Query via Stock ticker symbol
 
-`NSDictionary *results = [yql stockQuery:QueryTextView.text];`
+`NSDictionary *results = [yql stockQuery:@"TSLA"];`
 
 This will return a `NSDictionary` object with the stock's current details.
 Use results by accessing the dictionary view the `valueForKeyPath` command.

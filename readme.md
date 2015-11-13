@@ -4,7 +4,7 @@
 
 [YQL](http://developer.yahoo.com/yql/) (Yahoo! Query Language) is an expressive SQL-like language that lets you query, filter, and join data across Web services. With YQL, apps run faster with fewer lines of code and a smaller network footprint.
 
-## Usage
+## Query via YQL statement
 
 Import **YQL.h** and **YQL.m** into your project. Use the *query* method to invoke YQL, passing the desired query as a parameter:
 
@@ -13,6 +13,13 @@ Import **YQL.h** and **YQL.m** into your project. Use the *query* method to invo
 You will get a `NSDictionary` object containing the results. The structure of this dictionary is the same you would get from a query in the [YQL console](http://developer.yahoo.com/yql/console/). You can use `valueForKeyPath` to access the desired data in the results structure:
 
 `NSLog(@"%@", [[results valueForKeyPath:@"query.results"] description]);`
+
+## Query via Stock ticker symbol
+
+`NSDictionary *results = [yql stockQuery:QueryTextView.text];`
+
+This will return a `NSDictionary` object with the stock's current details.
+Use results by accessing the dictionary view the `valueForKeyPath` command.
 
 ## See it in action
 

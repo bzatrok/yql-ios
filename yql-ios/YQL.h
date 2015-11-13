@@ -11,5 +11,6 @@
 @interface YQL : NSObject
 
 - (NSDictionary *)query:(NSString *)statement;
+- (NSDictionary *) stockQuery: (NSString*) symbol;
 
 @end

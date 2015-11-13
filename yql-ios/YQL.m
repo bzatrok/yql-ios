@@ -25,4 +25,10 @@
     return results;
 }
 
+- (NSDictionary *) stockQuery: (NSString*) symbol
+{
+    return [self query: [NSString stringWithFormat: @"select * from yahoo.finance.quotes where symbol in (\"%@\")", symbol]];
+}
+
+
 @end

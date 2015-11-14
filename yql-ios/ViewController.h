@@ -17,6 +17,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *ResultsTextView;
 @property (strong, nonatomic) YQL *yql;
 
--(IBAction)Run_OnClick:(id)sender;
+-(IBAction)stockQueryClicked:(id)sender;
+-(IBAction)yqlQueryClicked:(id)sender;
 
 @end

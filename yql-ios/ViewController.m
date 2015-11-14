@@ -18,20 +18,32 @@
 @synthesize ResultsTextView;
 @synthesize yql;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    // Init YQL
 	yql = [[YQL alloc] init];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
--(IBAction)Run_OnClick:(id)sender {
-//    NSDictionary *results = [yql query:QueryTextView.text];
-    NSDictionary *results = [yql stockQuery:QueryTextView.text];
+-(IBAction)stockQueryClicked:(id)sender
+{
+    NSDictionary *results = [YQL stockQuery:QueryTextView.text];
+    [self updateResults:results];
+}
+
+-(IBAction)yqlQueryClicked:(id)sender
+{
+    NSDictionary *results = [YQL query:QueryTextView.text];
+    [self updateResults:results];
+}
+
+-(void) updateResults:(NSDictionary*)results
+{
     ResultsTextView.text = [[results valueForKeyPath:@"query.results"] description];
 }
 

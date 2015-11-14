@@ -203,7 +203,7 @@
 			name = "yql-iosTests";
 			productName = "yql-iosTests";
 			productReference = BB1775811631B65C00659E8A /* yql-iosTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -211,6 +211,7 @@
 		BB1775511631B65C00659E8A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0710;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Guilherme Chapiewski";
 			};

@@ -13,7 +13,7 @@
 
 @implementation YQL
 
-- (NSDictionary *) query: (NSString *)statement {
++ (NSDictionary *) query: (NSString *)statement {
     NSString *query = [NSString stringWithFormat:@"%@%@%@", QUERY_PREFIX, [statement stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding], QUERY_SUFFIX];
     
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
@@ -25,9 +25,9 @@
     return results;
 }
 
-- (NSDictionary *) stockQuery: (NSString*) symbol
++ (NSDictionary *) stockQuery: (NSString*) symbol
 {
-    return [self query: [NSString stringWithFormat: @"select * from yahoo.finance.quotes where symbol in (\"%@\")", symbol]];
+    return [YQL query: [NSString stringWithFormat: @"select * from yahoo.finance.quotes where symbol in (\"%@\")", symbol]];
 }
 
 

@@ -10,7 +10,7 @@
 
 @interface YQL : NSObject
 
-- (NSDictionary *)query:(NSString *)statement;
-- (NSDictionary *) stockQuery: (NSString*) symbol;
++ (NSDictionary *)query:(NSString *)statement;
++ (NSDictionary *)stockQuery: (NSString*) symbol;
 
 @end
